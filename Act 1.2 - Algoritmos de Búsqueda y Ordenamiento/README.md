@@ -16,4 +16,4 @@ A diferencia con los dos anteriores, este se opera con recursividad y por ende s
 
 # busqSecuencial
 
-Despues de las 3 funciones de ordenamiento pasamos al tipo método de busqueda es un método para encontrar un valor objetivo dentro de una lista.Ésta comprueba secuencialmente cada elemento de la lista para el valor objetivo hasta que es encontrado o hasta que todos los elementos hayan sido comparados.
+Despues de las 3 funciones de ordenamiento pasamos al tipo método de busqueda es un método para encontrar un valor objetivo dentro de una lista. Ésta comprueba secuencialmente cada elemento de la lista para el valor objetivo hasta que es encontrado o hasta que todos los elementos hayan sido comparados. En el programa se desarrolla con un "for" donde recorre al arreglo de forma lineal elemento por elemento, entonces el peor de los casos es cuando el elemento buscado está hasta el final del arreglo por lo que la complejidad temporal asintótica es O(n).
