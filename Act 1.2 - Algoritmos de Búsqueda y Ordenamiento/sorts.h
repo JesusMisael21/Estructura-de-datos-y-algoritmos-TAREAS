@@ -66,7 +66,7 @@ void Sorts<T>::ordenaBurbuja(std::vector<T> &source) {
 		}
 	}
 }
-// Declaración del metodo mergeSplit
+// Declaración del metodo mergeSplit (partir la lista en 2 partes)
 template <class T>
 void Sorts<T>::mergeSplit(std::vector<T> &A, std::vector<T> &B, int low, int high) {
 	int mid;
@@ -80,14 +80,14 @@ void Sorts<T>::mergeSplit(std::vector<T> &A, std::vector<T> &B, int low, int hig
 	mergeArray(A, B, low, mid, high);
 	copyArray(A, B, low, high);
 }
-// Declaración del metodo copyArray
+// Declaración del metodo copyArray (mezlar las subdiviciones)
 template <class T>
 void Sorts<T>::copyArray(std::vector<T> &A, std::vector<T> &B, int low, int high) {
 	for (int i = low; i <= high; i++) {
 		A[i] = B[i];
 	}
 }
-// Declaración del metodo mergeArray
+// Declaración del metodo mergeArray (ordenar recursivamente ambas partes)
 template <class T>
 void Sorts<T>::mergeArray(std::vector<T> &A, std::vector<T> &B, int low, int mid, int high) {
 	int i, j, k;
@@ -133,7 +133,7 @@ int Sorts<T>::busqSecuencial(const std::vector<T>&source,int val){
 	}
 	return (-1);
 }
-// Declaración del metodo bs_aux
+// Declaración del metodo bs_aux (contenido del binario)
 template <class T>
 int Sorts<T>::bs_aux(const std::vector<T>&source,int low,int high,int val) { // o(log(n))
 	int mid;
