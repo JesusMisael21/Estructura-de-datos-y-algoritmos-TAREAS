@@ -13,3 +13,7 @@ Este es un algoritmo de los más simples, recorre la lista repetidamente, compar
 # ordenaMerge
 
 A diferencia con los dos anteriores, este se opera con recursividad y por ende su complejidad espacial ya no es constante porque aumentará memoria. La idea general en su operación de este algoritmo es la de dividir el problema en subproblemas más pequeños. En el programa ya implementado tenemos un caso base que es una lista vacía o de un elemento ya ordenado, tenemos tres funciones auxiliare donde la primera parte la lista en 2 partes, la segunda ordena recursivamente ambas partes y al último la tercera que mezcla ambas divisiones. Si vieramos el comportamiento de este algoritmo en diagráma de árbol vemos puros subarreglos que se sividen en 2, es decir n/2 en el primer nivel, despues n/4 en el segundo, n/8 en el tercero y así sucesivament. Entonces tenemos que temporalmente hasta aquí es log de 2 de n [O(log2 n)], después el paso de combinar mezcla un total de n elementos y se tarda un tiempo O(n), es por eso que multiplicando las complejidades tenemos un O(nlog2(n)).
+
+# busqSecuencial
+
+Despues de las 3 funciones de ordenamiento pasamos al tipo método de busqueda es un método para encontrar un valor objetivo dentro de una lista.Ésta comprueba secuencialmente cada elemento de la lista para el valor objetivo hasta que es encontrado o hasta que todos los elementos hayan sido comparados.
