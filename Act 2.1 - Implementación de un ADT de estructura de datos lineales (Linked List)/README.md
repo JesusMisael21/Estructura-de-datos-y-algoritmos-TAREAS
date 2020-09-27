@@ -18,4 +18,4 @@ Para este método se necesita un argumento de dos elementos, recibe la posición
 
 # remove
 
-En este metodo se recibe la posición del elemento a eliminar haciendo la lista más chica en -1 cada ves que se utilice (siempre y cuando la cantidad de elementos de la lista sea diferente de cero). Para eliminar la posición deseada se tiene que pasar por cada una de las anteriores, entonces para el peor de los casos es que se quisiera eliminar el elemento final de la lista, así teniendo la complejidad temporal asintótica O(n).
+En este metodo se recibe la posición del elemento a eliminar haciendo la lista más chica en 1 cada ves que se utilice (siempre y cuando la cantidad de elementos de la lista sea diferente de cero). Para eliminar la posición deseada se tiene que pasar por cada una de las anteriores, entonces para el peor de los casos es que se quisiera eliminar el elemento final de la lista, así teniendo la complejidad temporal asintótica O(n).
