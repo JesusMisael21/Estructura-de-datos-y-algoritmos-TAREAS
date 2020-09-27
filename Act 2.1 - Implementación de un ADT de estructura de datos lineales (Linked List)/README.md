@@ -1,0 +1,1 @@
+En el main se incluye al archivo de las funciones "list.h", el main será el test, dichas funciones son para las operaciones CRUD (Create, Read (buscar), Update, Delete) elementos en la estructura de datos.
