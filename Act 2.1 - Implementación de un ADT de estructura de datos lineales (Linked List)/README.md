@@ -14,7 +14,7 @@ Este método recibe un tipo de elemento de acuerdo al tipo de lista y regresa la
 
 # update
 
-Para este método se necesita un argumento de dos elementos, recibe la posición a actualizr y el elemento por el cual se va a remplazar. El algoritmo que cuenta es parecido al de find (busqueda secuencial), tiene que pasar por cada una de las posiciones empezando desde la posición 0 hasta llegar a la posición deseada. Entonces, para el peor de los casos es cuando se quiera actualizar el elemento final de la lista, así teniendo una complejidad temporal asintótica O(n).
+Para este método se necesita un argumento de dos elementos, recibe la posición a actualizar y el elemento por el cual se va a remplazar. El algoritmo que cuenta es parecido al de find (busqueda secuencial), tiene que pasar por cada una de las posiciones empezando desde la posición 0 hasta llegar a la posición deseada. Entonces, para el peor de los casos es cuando se quiera actualizar el elemento final de la lista, así teniendo una complejidad temporal asintótica O(n).
 
 # remove
 
