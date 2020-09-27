@@ -10,7 +10,7 @@ Este es una función o en este caso como se trabaja con orientado a objetos, es 
 
 # find
 
-Este método recibe un tipo de elemento de acuerdo al tipo de lista y regresa la posición en donde se encuentra ese elemento. Para este elemento se implementa un algoritmo de busqueda secuencial, es decir, para buscar un elemento se tiene que pasar por cada elemento uno por uno emezando con la cabeza, por lo tanto el peor de los casos es cuando el elemento se encuentra al final de la lista, teniendo una complejidad temporal asintótica O(n).
+Este método recibe un tipo de elemento de acuerdo al tipo de lista y regresa la posición en donde se encuentra ese elemento. Para este elemento se implementa un algoritmo de busqueda secuencial, es decir, para buscar un elemento se tiene que pasar por cada elemento uno por uno empezando con la cabeza, por lo tanto el peor de los casos es cuando el elemento se encuentra al final de la lista, teniendo una complejidad temporal asintótica O(n).
 
 # update
 
