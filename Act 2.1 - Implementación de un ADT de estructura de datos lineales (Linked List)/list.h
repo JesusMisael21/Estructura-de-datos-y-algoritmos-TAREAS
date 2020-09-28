@@ -13,6 +13,7 @@
 
 template <class T> class List;
 
+// Clase Link, en esta entrega no se usa pero tengamos en cuenta que en posteriores si
 template <class T>
 class Link {
 private:
@@ -35,13 +36,15 @@ Link<T>::Link(T val, Link* nxt) : value(val), next(nxt) {}
 template <class T>
 Link<T>::Link(const Link<T> &source) : value(source.value), next(source.next) {}
 
+//Clase Lins, en ella se crearán los nodos
 template <class T>
 class List {
 public:
-	List();
+	//Prototipo de los constructores, es sobrecarga
+	List();  
 	List(const List<T>&) throw (OutOfMemory);
 	~List();
-	
+	// Prototipo de los metodos/funciones para manipular la lista
 	void addFirst(T) throw (OutOfMemory);
 	void add(T) throw (OutOfMemory);
 	int find(T) const;
@@ -51,20 +54,21 @@ public:
 	bool empty() const;
 	void clear();
 	std::string toString() const;
-
+	// Variables que no me interesan que el usuario vea (auxiliares)
 private:
 	Link<T> *head;
 	int 	size;
 };
 
+// Definición de los constructores
 template <class T>
 List<T>::List() : head(0), size(0) {}
-
+// Sobrecarga, dependiendo de la creación de una lista o nodos
 template <class T>
 List<T>::~List() {
 	clear();
 }
-
+// Definición del addFirst (añade elemento despues del nodo head)
 template <class T>
 void List<T>::addFirst(T val) throw (OutOfMemory) {
 	Link<T> *newLink;
@@ -77,7 +81,7 @@ void List<T>::addFirst(T val) throw (OutOfMemory) {
 	head = newLink;
 	size++;
 }
-
+// Definición del add (añade elemento a la ultima posicion de la lista)
 template <class T>
 void List<T>::add(T val) throw (OutOfMemory) {
 	Link<T> *newLink, *p;
@@ -101,7 +105,7 @@ void List<T>::add(T val) throw (OutOfMemory) {
 	p->next = newLink;
 	size++;
 }
-
+// Definición del find (busca un elemento de acuerdo a su valor recibido y retorna la posicion)
 template <class T>
 int List<T>::find(T val) const {
 	Link<T> *p;
@@ -117,7 +121,7 @@ int i=0;
 	}
 	return -1;
 }
-
+// Definición de update (actualiza la posicion deseada con el valor introducido)
 template <class T>
 bool List<T>::update(int index, T val) throw (IndexOutOfBounds) {
 	int pos;
@@ -135,7 +139,7 @@ bool List<T>::update(int index, T val) throw (IndexOutOfBounds) {
 	p->value=val;
 	return true;
 }
-
+// Definición de removeFirst (elimina el nodo al que apunta el head)
 template <class T>
 T List<T>::removeFirst() throw (NoSuchElement) {
 	T val;
@@ -155,7 +159,7 @@ T List<T>::removeFirst() throw (NoSuchElement) {
 
 	return val;
 }
-
+// Definición de remove (elinina el nodo en la posición deseada)
 template <class T>
 T List<T>::remove(int index) throw (IndexOutOfBounds) {
 	int pos;
@@ -187,12 +191,12 @@ T List<T>::remove(int index) throw (IndexOutOfBounds) {
 	
 	return val;
 }
-
+// Definición de empy (para saber si hay elementos en la lista)
 template <class T>
 bool List<T>::empty() const {
 	return (head == 0);
 }
-
+// Definición de clear (elimina todos los nodos de la lista)
 template <class T>
 void List<T>::clear() {
 	Link<T> *p, *q;
@@ -206,7 +210,7 @@ void List<T>::clear() {
 	head = 0;
 	size = 0;
 }
-
+// Definición de toString (se usa para leer la lista en forma de array)
 template <class T>
 std::string List<T>::toString() const {
 	std::stringstream aux;
