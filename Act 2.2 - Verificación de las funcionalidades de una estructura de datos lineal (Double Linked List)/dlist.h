@@ -19,10 +19,12 @@ template <class T> class DListIterator;
 template <class T>
 class DLink {
 private:
+	//Prototipo de los constructores, es sobrecarga
 	DLink(T);
 	DLink(T, DLink<T>*, DLink<T>*);
 	DLink(const DLink<T>&);
 
+	//Variables que contienen el valor y los enlaces
 	T	    value;
 	DLink<T> *previous;
 	DLink<T> *next;
@@ -30,13 +32,12 @@ private:
 	friend class DList<T>;
 	friend class DListIterator<T>;
 };
-
+// Definición de los constructores
 template <class T>
 DLink<T>::DLink(T val) : value(val), previous(0), next(0) {}
-
+// Sobrecarga, dependiendo de la creación de los nodos
 template <class T>
 DLink<T>::DLink(T val, DLink *prev, DLink* nxt) : value(val), previous(prev), next(nxt) {}
-
 template <class T>
 DLink<T>::DLink(const DLink<T> &source) : value(source.value), previous(source.previous), next(source.next) {}
 
@@ -74,7 +75,7 @@ private:
 // Definición de los constructores
 template <class T>
 DList<T>::DList() : head(0), tail(0), size(0) {}
-// Sobrecarga, dependiendo de la creación de una lista o nodos
+// Sobrecarga, dependiendo de la creación de una lista
 template <class T>
 DList<T>::~DList() {
 	clear();
