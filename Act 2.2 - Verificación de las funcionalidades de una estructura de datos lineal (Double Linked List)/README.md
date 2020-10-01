@@ -1,4 +1,4 @@
-En el main se incluye al archivo de las funciones "dlist.h", el main será el test, dichas funciones son para las operaciones CRUD (Create, Read (buscar), Update, Delete) elementos en la estructura de datos.
+En el main se incluye al archivo de las funciones "dlist.h", el main será el test, dichas funciones son para las operaciones CRUD (Create, Read (buscar), Update, Delete) algoritmos para manipular una lista doblemente ligada.
 
 En caso de tener windows compilar como: g++ -Wno-deprecated main.cpp
 
