@@ -22,7 +22,7 @@ En este método transversal, el nodo raíz se visita en último lugar, de ahí e
 
 ## level by level
 
-Muestra los nodos en todos los niveles uno por uno comenzando desde la raíz y después con los subárboles de izquierda a derecha. Para el peor de los casos es que tenga que recorrer un árbol degenerado, por lo que su complejidad temporál asintótica es O(n).
+Muestra los nodos en todos los niveles uno por uno comenzando desde la raíz y después con los subárboles de izquierda a derecha. Se usa un for para llamar n veces a una función que recorre los n elementos del árbol, por lo que su complejidad temporál asintótica es O(n^2).
 
 # height
 
