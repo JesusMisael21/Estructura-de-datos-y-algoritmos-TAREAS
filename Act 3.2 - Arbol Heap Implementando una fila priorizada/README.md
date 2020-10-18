@@ -15,3 +15,15 @@ Este algoritmo agrega un dato a la fila, para el mejor de los casos es que el da
 # pop
 
 Este algoritmo saca de la fila el dato que tiene mayor prioridad "el que está en la raíz" (haciendo referencia a un árbol). Entonces, siguiendo la funcionalidad de este, al sacar al elemento priorizado, el algoritmo toma al último elemento de la fila (menos priorizado) y lo pone como el de mayor prioridad, esto anterior se hace para todos los casos Ω(2), pero a partir de ahí se decide la complejidad asintótica (empieza el reordenamiento), ya que para el peor de los casos es que este valor sea depositado en la última posición de la fila (último nivel si lo vemos en forma de árbol) teniendo así una complejidad temporal asintótica O(log(n)).
+
+# top
+
+Este método regresa el valor del dato que esta con mayor prioridad en la fila priorizada. Lo que hace este algoritmo es llamar al dato que se encuentra en la primera posición de la fila, por lo que para todos los casos se tiene una complejidad lineal, O(1) expresado asintóticamente.
+
+# empty 
+
+Regresa un valor boleando diciendo si la fila priorizada esta vacía con un true o si tiene datos con un false. Para esto se manda a llamar una variable atributo de la fila cual incrementa al añadir datos y decrementa cuando se le aplica un "pop", esta variable se compara con el valor cero, por lo que para todos los casos se tiene una complejidad lineal, O(1) expresado asintóticamente.
+
+# size
+
+Regresa la cantidad de datos que tiene la fila priorizada. El algoritmo es parecido al anterior, con la diferencia de que este no hace la comparación con la variable atributo anteriormente mencionada y solo la manda a llamar para retornarla. Entonces, para todos los casos se tiene una complejidad lineal, O(1) expresado asintóticamente.
