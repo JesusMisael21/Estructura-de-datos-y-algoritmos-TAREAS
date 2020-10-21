@@ -37,3 +37,11 @@ Para el peor de los casos es que se quiera eliminar el elemento que tenga mayor 
 # find
 
 Este algoritmo es idéntico al árbol binario, busca recursivamente el elemento solicitado. En este escenario es posible tener un árbol degenerado y este junto a la situación de que se queira encontrar al elemento con mayor profundidad hacen el peor de los casos, tendrá que navegar el algoritmo por cada uno de los elementos, así teniendo una complejidad temporal asintótica O(n).
+
+# inorder
+
+En este método de recorrido para mostrar los elementos en pantalla, primero se visita el subárbol izquierdo, luego la raíz y luego el subárbol derecho. Siempre debemos recordar que cada nodo puede representar un subárbol en sí mismo, la salida producirá valores clave ordenados en orden ascendente. Para el peor de los casos es que tenga que recorrer un árbol degenerado, por lo que su complejidad temporál asintótica es O(n).
+
+# size
+
+Regresa la cantidad de datos que tiene el árbol. Este manda a llamar a un atributo propio del árbol en el que incrementa cuando se añade un elemento y decrementa cuando se borra alguno de ellos. Entonces, para todos los casos se tiene una complejidad lineal, O(1) expresado asintóticamente.
