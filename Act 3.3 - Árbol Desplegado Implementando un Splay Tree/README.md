@@ -19,6 +19,15 @@ Alternativamente:
 * Utilice la operación de división para dividir el árbol en el valor de x en dos subárboles: S y T.
 * Cree un nuevo árbol en el que x es la raíz, S es su subárbol izquierdo y T es su subárbol derecho.
 
-Para todos los casos el elemento añadido se posiciona al final del árbol, después tiene que recorrer nivel por nivel hasta llegar a la raíz, para esto la cantidad de pasos ejecutados para lo anterior es logaritmico a comparación a la cantidad de elementos añadidos, así teniendo una complejidad temporal asintótica O(log n)
+Para todos los casos el elemento añadido se posiciona al final del árbol, después tiene que recorrer nivel por nivel hasta llegar a la raíz, para esto la cantidad de pasos ejecutados para lo anterior es logaritmico a comparación a la cantidad de elementos añadidos, así teniendo una complejidad temporal asintótica O(log n).
 
+# remove (delete)
 
+Para eliminar un nodo x , use el mismo método que con un árbol de búsqueda binaria:
+* Si x tiene dos hijos:
+* Cambie su valor con el del nodo más a la derecha de su subárbol izquierdo (su predecesor en orden) o el nodo más a la izquierda de su subárbol derecho (su sucesor en orden).
+* En su lugar, elimine ese nodo.
+
+De esta forma, la eliminación se reduce al problema de eliminar un nodo con 0 o 1 hijos. A diferencia de un árbol de búsqueda binaria, en un árbol de distribución después de la eliminación, colocamos el padre del nodo eliminado en la parte superior del árbol.
+* El nodo que se va a eliminar se muestra primero, es decir, se lleva a la raíz del árbol y luego se elimina. deja el árbol con dos subárboles.
+* Los dos subárboles se unen luego mediante una operación de "unión".
