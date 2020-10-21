@@ -31,3 +31,9 @@ Para eliminar un nodo x , use el mismo método que con un árbol de búsqueda bi
 De esta forma, la eliminación se reduce al problema de eliminar un nodo con 0 o 1 hijos. A diferencia de un árbol de búsqueda binaria, en un árbol de distribución después de la eliminación, colocamos el padre del nodo eliminado en la parte superior del árbol.
 * El nodo que se va a eliminar se muestra primero, es decir, se lleva a la raíz del árbol y luego se elimina. deja el árbol con dos subárboles.
 * Los dos subárboles se unen luego mediante una operación de "unión".
+
+Para el peor de los casos es que se quiera eliminar el elemento que tenga mayor profundidad en el árbol, entonces para eliminar tiene que recorrer todos los niveles que están arriba de él, así comporandolo con la cantidad de datos tenemos tiempos logarítmicos, una temporalidad O(log n) para este escenario.
+
+# find
+
+Este algoritmo es idéntico al árbol binario, busca recursivamente el elemento solicitado. En este escenario es posible tener un árbol degenerado y este junto a la situación de que se queira encontrar al elemento con mayor profundidad hacen el peor de los casos, tendrá que navegar el algoritmo por cada uno de los elementos, así teniendo una complejidad temporal asintótica O(n).
