@@ -25,6 +25,7 @@ template<class T>
 class SplayTree{
 private:
 	Node<T> *root;
+	int cant;
 	
 public:
 	SplayTree();
@@ -34,6 +35,7 @@ public:
 	bool find(T);
 	void remove(T);
 	void removeAll();
+	int size();
 	std::string inorder() const;
 	std::string print_tree() const;
 	std::string preorder() const;
@@ -41,7 +43,7 @@ public:
 
 
 template <class T>	
-SplayTree<T>::SplayTree():root(0) {}
+SplayTree<T>::SplayTree():root(0), cant(0) {}
 
 
 template<class T>
@@ -58,7 +60,7 @@ bool SplayTree<T>::empty() const{
 
 template<class T>
 void SplayTree<T>::add(T val){
-	
+	cant++;
 	if(root !=0){
 		Node<T>* added= root->add(val);
 		root=root->splay(root,added);
@@ -70,6 +72,7 @@ void SplayTree<T>::add(T val){
 
 template<class T>
 void SplayTree<T>::remove(T val){
+	cant--;
 	if(root!=0){
 		if(val==root->value){
 			Node<T> *succ=root->succesor();
@@ -115,6 +118,10 @@ bool SplayTree<T>::find(T val){
 	}
 }
 
+template<class T>
+int SplayTree<T>::size(){
+	return cant;
+}
 
 template<class T>
 std::string SplayTree<T>::inorder() const{
