@@ -15,21 +15,23 @@
 #include <sstream>
 #include "exception.h"
 #include <iostream>
-#include "node.h"
+#include "node.h" // node se reusa de las estructuras anteriores
 
 template <class T> class SplayTree;
 
-
-	
+// se crea la clase SplayTree
 template<class T>
 class SplayTree{
 private:
+	// atributos propios de la clase
 	Node<T> *root;
 	int cant;
 	
 public:
+	// prototipo del constructor y del destructor
 	SplayTree();
 	~SplayTree();
+	// prototipo de los metodos para manipular el arbol (para el usuario)
 	bool empty() const;
 	void add(T);
 	bool find(T);
@@ -41,23 +43,23 @@ public:
 	std::string preorder() const;
 };
 
-
+// definicion del constructor
 template <class T>	
 SplayTree<T>::SplayTree():root(0), cant(0) {}
 
-
+// definicion del destructor
 template<class T>
 SplayTree<T>::~SplayTree() {
 	removeAll();
 }
 	
-
+// definicion del metodo empty (retorna true si está limpia y false cuando esta vacia)
 template<class T>
 bool SplayTree<T>::empty() const{
 	return (root==0);
 }
 
-
+// definicion del metodo add (añade un elemento y lo posiciona en la raiz con una funcion aux)
 template<class T>
 void SplayTree<T>::add(T val){
 	cant++;
@@ -69,7 +71,7 @@ void SplayTree<T>::add(T val){
 	}
 }
 	
-
+// definicion del metodo remove (elimina val y reordena con splay)
 template<class T>
 void SplayTree<T>::remove(T val){
 	cant--;
@@ -95,7 +97,7 @@ void SplayTree<T>::remove(T val){
 	}
 }
 
-
+// definicion del metodo removeAll (elimina todo los elementos del arbol)
 template<class T>
 void SplayTree<T>::removeAll(){
 	if(root !=0){
@@ -105,7 +107,7 @@ void SplayTree<T>::removeAll(){
 	root=0;
 }
 	
-
+// definicion del metodo find (true si lo encuentra y false si no, al final aplica splay)
 template<class T>
 bool SplayTree<T>::find(T val){
 	if(root!=0){
@@ -117,12 +119,13 @@ bool SplayTree<T>::find(T val){
 		return false;
 	}
 }
-
+// definicion del metodo size (retorna cantidad de elementos del arbol)
 template<class T>
 int SplayTree<T>::size(){
 	return cant;
 }
 
+// definicion del metodo inorder (forma de recorrer y mostrar el arbol)
 template<class T>
 std::string SplayTree<T>::inorder() const{
 	std::stringstream aux;
@@ -135,7 +138,7 @@ std::string SplayTree<T>::inorder() const{
 	return aux.str();
 }
 	
-
+// definicion del metodo print_tree (segunda forma de recorrer y mostrar el arbol)
 template<class T>
 std::string SplayTree<T>::print_tree() const{
 	std::stringstream aux;
@@ -148,7 +151,7 @@ std::string SplayTree<T>::print_tree() const{
 	return aux.str();
 }
 	
-	
+// definicion del metodo preorder (tercera forma de recorrer y mostrar el arbol)	
 template<class T>
 std::string SplayTree<T>::preorder() const{
 	std::stringstream aux;

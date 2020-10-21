@@ -3,16 +3,17 @@
 
 #include <string>
 #include <sstream>
-// #include "exception.h"
+#include "exception.h"
 #include <iostream>
 #include "splay.h"
 
 template <class T> class SplayTree;
 
-
+// creacion de la clase Node
 template <class T>
 class Node{
 private:
+	// atributtos pripios de Node
 	T value;
 	Node *left, *right, *parent;
 	
@@ -21,8 +22,10 @@ private:
 	Node<T>* rot_left(Node<T>*);
 		
 public:
+	// prototipo de los constructores
 	Node(T);
 	Node(T,Node<T>*,Node<T>*,Node<T>*);
+	// prototipo de los metodos para manipular el arbol (para el usuario)
 	Node<T>*add(T);
 	Node<T>*find(T);
 	Node<T>*remove(T);
@@ -34,14 +37,15 @@ public:
 	
 	friend class SplayTree<T>;
 };
-
+// definicion del primer constructor
 template <class T>
 Node<T>::Node(T val): value(val),left(0),right(0),parent(0) {}
-	
+// se aplica sobrecarga para este segundo constructor
 template <class T>
 Node<T>::Node(T val,Node<T> *le,Node<T> *ri,Node<T> *p) 
 : value(val),left(le),right(ri),parent(p){}
-	
+
+// definicion del metodo add (añade un elemento y lo posiciona en la raiz con una funcion aux)
 template <class T>
 Node<T>* Node<T>::add(T val){
 	if(val<value){
@@ -63,6 +67,7 @@ Node<T>* Node<T>::add(T val){
 	}
 }
 	
+// definicion del metodo find (true si lo encuentra y false si no, al final aplica splay)
 template<class T>
 Node<T>* Node<T>::find(T val){
 	if(val==value){
@@ -81,47 +86,8 @@ Node<T>* Node<T>::find(T val){
 	return 0;
 }	
 	
-template<class T>
-Node<T>* Node<T>::succesor(){
-	Node<T> *le,*ri;
-	
-	le=left;
-	ri=right;
-	
-	if(right==0){
-		if(left !=0){
-			left=0;
-		}
-		if(le)
-			le->parent=0;
-		return le;
-	}
-	
-	if(right->left==0){
-		right=right->right;
-		if(right)
-			right->parent =parent;
-		if(ri){
-			ri->right=0;
-			ri->parent=0;
-		}
-		return ri;
-	}
-	
-	Node<T> *p,*c;
-	p=right;
-	c=right->left;
-	while(c->left !=0){
-		p=c;
-		c=c->left;
-	}
-	p->left=c->right;
-	if(p->left !=0)
-		p->left->parent=p;
-	c->right=0;
-	return c;
-}
 
+// definicion del metodo remove (elimina val y reordena con splay)
 template<class T>
 Node<T>* Node<T>::remove(T val){
 	Node<T> *succ,*old;
@@ -170,7 +136,7 @@ Node<T>* Node<T>::remove(T val){
 	}
 	return 0;
 }
-
+// definicion del metodo removeChilds (elimina los subarboles)
 template<class T>
 void Node<T>::removeChilds(){
 	if(left !=0){
@@ -184,7 +150,8 @@ void Node<T>::removeChilds(){
 		right=0;
 	}
 }
-	
+// definicion del metodo rot_right (rotacion de apuntadores a la derecha)
+// del dato elejido se toma uno a rriba y otro abajo (parent y granp)	
 template <class T>
 Node<T>* Node<T>::rot_right(Node<T>* x){
 	Node<T> *y=x->left;
@@ -206,6 +173,49 @@ Node<T>* Node<T>::rot_right(Node<T>* x){
 }
 
 template<class T>
+Node<T>* Node<T>::succesor(){
+	Node<T> *le,*ri;
+	
+	le=left;
+	ri=right;
+	
+	if(right==0){
+		if(left !=0){
+			left=0;
+		}
+		if(le)
+			le->parent=0;
+		return le;
+	}
+	
+	if(right->left==0){
+		right=right->right;
+		if(right)
+			right->parent =parent;
+		if(ri){
+			ri->right=0;
+			ri->parent=0;
+		}
+		return ri;
+	}
+	
+	Node<T> *p,*c;
+	p=right;
+	c=right->left;
+	while(c->left !=0){
+		p=c;
+		c=c->left;
+	}
+	p->left=c->right;
+	if(p->left !=0)
+		p->left->parent=p;
+	c->right=0;
+	return c;
+}
+
+// definicion del metodo rot_left (rotacion de apuntadores a la izquierda)
+// del dato elejido se toma uno a rriba y otro abajo (parent y granp)
+template<class T>
 Node<T>* Node<T>::rot_left(Node<T>*x){
 	Node<T> *y=x->right;
 	x->right=y->left;
@@ -224,7 +234,8 @@ Node<T>* Node<T>::rot_left(Node<T>*x){
 	}
 	return y;
 }
-	
+
+// definicion del metodo splay (reordena con característica propia de splay cada consulta)	
 template<class T>
 Node<T>* Node<T>::splay(Node<T>* root, Node<T>* x){
 	while(x->parent!=0){
@@ -260,6 +271,7 @@ Node<T>* Node<T>::splay(Node<T>* root, Node<T>* x){
 	return x;
 }
 	
+// definicion del metodo inorder (forma de recorrer y mostrar el arbol)
 template <class T>
 void Node<T>::inorder(std::stringstream &aux) const {
 	if(left !=0){
@@ -274,6 +286,7 @@ void Node<T>::inorder(std::stringstream &aux) const {
 	}
 }
 	
+// definicion del metodo print_tree (segunda forma de recorrer y mostrar el arbol)
 template <class T>
 void Node<T>::print_tree(std::stringstream &aux) const {
 	if (parent != 0){
@@ -295,6 +308,7 @@ void Node<T>::print_tree(std::stringstream &aux) const {
 	}
 }
 	
+// definicion del metodo preorder (tercera forma de recorrer y mostrar el arbol)	
 template <class T>
 void Node<T>::preorder(std::stringstream &aux) const {
 	aux << value;
