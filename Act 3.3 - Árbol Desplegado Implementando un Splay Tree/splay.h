@@ -13,7 +13,7 @@
 
 #include <string>
 #include <sstream>
-// #include "exception.h"
+#include "exception.h"
 #include <iostream>
 #include "node.h"
 
