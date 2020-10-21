@@ -14,6 +14,7 @@ Para insertar un valor x en un árbol de distribución:
 * Inserte x como con un árbol de búsqueda binario normal .
 * cuando se inserta un elemento, se realiza una expansión.
 * Como resultado, el nodo x recién insertado se convierte en la raíz del árbol.
+
 Alternativamente:
 * Utilice la operación de división para dividir el árbol en el valor de x en dos subárboles: S y T.
 * Cree un nuevo árbol en el que x es la raíz, S es su subárbol izquierdo y T es su subárbol derecho.
