@@ -2,7 +2,7 @@ En el main se incluye el archivo de las funciones "graph.h", el main será el te
 
 Compilar desde la terminal: g++ main.cpp
 
-# Escenario del Splay Tree
+# Escenario del Grafo en esta implementación
 
 Representación gráfica formada por nodos o vértices que muestra a los actores y aristas que sirven para representar los lazos o relaciones entre los actores. En esta implementación se usarán metodos para recorrerlo en dos distintas formas.
 
