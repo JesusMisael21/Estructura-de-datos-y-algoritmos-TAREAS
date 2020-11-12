@@ -17,7 +17,7 @@
 
 using namespace std;
   
-// Definition of the Graph class
+// Graph class, This is the definition 
   
 class Graph {
 	private:
